@@ -1,0 +1,214 @@
+/* =========================================================
+   Hem Newsletter — Public Form Styles
+   ========================================================= */
+
+.hem-nl-form-wrap {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  width: var(--hem-nl-form-width, 520px);
+  max-width: 100%;
+}
+
+.hem-nl-form-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.hem-nl-form-inner {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.hem-nl-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hem-nl-email-input {
+  flex: 1;
+  height: var(--hem-nl-form-height, 44px);
+  padding: 0 14px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--hem-nl-input-radius, 6px);
+  outline: none;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color .2s, box-shadow .2s;
+  min-width: 0;
+  box-sizing: border-box;
+  line-height: normal;
+  margin: 0;
+}
+
+.hem-nl-email-input:focus {
+  border-color: var(--hem-nl-button-hover-color, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+  background: #fff;
+}
+
+.hem-nl-submit-btn {
+  flex-shrink: 0;
+  height: var(--hem-nl-button-height, var(--hem-nl-form-height, 44px));
+  width: var(--hem-nl-button-width, auto);
+  padding: 0 20px;
+  background: var(--hem-nl-button-color, #1a1a1a);
+  color: var(--hem-nl-button-text-color, #ffffff);
+  border: none;
+  border-radius: var(--hem-nl-button-radius, 6px);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  gap: 8px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.hem-nl-submit-btn:hover {
+  background: var(--hem-nl-button-hover-color, #2563eb);
+}
+
+.hem-nl-submit-btn:active {
+  transform: scale(.98);
+}
+.hem-nl-button-inside .hem-nl-submit-btn:active {
+  transform: translateY(-50%) scale(.98);
+}
+
+.hem-nl-submit-btn.is-loading .hem-nl-btn-label { opacity: 0; }
+.hem-nl-submit-btn.is-loading .hem-nl-btn-spinner { display: block; }
+
+/* Spinner */
+.hem-nl-btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: hem-nl-spin .6s linear infinite;
+  position: absolute;
+}
+
+.hem-nl-submit-btn {
+  position: relative;
+}
+
+@keyframes hem-nl-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+.hem-nl-button-inside .hem-nl-row {
+  position: relative;
+  gap: 0;
+}
+
+.hem-nl-button-inside .hem-nl-email-input {
+  padding-right: calc(var(--hem-nl-button-width, 120px) + 14px);
+}
+
+.hem-nl-button-inside .hem-nl-submit-btn {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  width: var(--hem-nl-button-width, 120px);
+  height: auto;
+  max-height: calc(var(--hem-nl-form-height, 44px) - 2px);
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transform: none;
+}
+
+/* Message */
+.hem-nl-message {
+  margin-top: 10px;
+  font-size: 13px;
+  min-height: 0;
+  border-radius: 5px;
+  padding: 0;
+  transition: all .2s;
+}
+
+.hem-nl-message.is-success {
+  color: #166534;
+  background: #dcfce7;
+  padding: 10px 14px;
+  border: 1px solid #bbf7d0;
+}
+
+.hem-nl-message.is-error {
+  color: #991b1b;
+  background: #fee2e2;
+  padding: 10px 14px;
+  border: 1px solid #fecaca;
+}
+
+/* Footer */
+.hem-nl-powered {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.hem-nl-donate-link {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.hem-nl-donate-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: keep the same visual structure on desktop, tablet, and mobile. */
+@media ( max-width: 480px ) {
+  .hem-nl-form-wrap {
+    width: min(var(--hem-nl-form-width, 520px), 100%);
+  }
+
+  .hem-nl-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hem-nl-button-outside .hem-nl-submit-btn {
+    width: var(--hem-nl-button-width, auto);
+  }
+
+  .hem-nl-button-inside .hem-nl-row {
+    gap: 0;
+  }
+
+  .hem-nl-button-inside .hem-nl-email-input {
+    padding-right: calc(var(--hem-nl-button-width, 120px) + 14px);
+  }
+
+  .hem-nl-button-inside .hem-nl-submit-btn {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    width: var(--hem-nl-button-width, 120px);
+    height: auto;
+    max-height: calc(var(--hem-nl-form-height, 44px) - 2px);
+    transform: none;
+  }
+}

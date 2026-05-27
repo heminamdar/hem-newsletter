@@ -1,0 +1,403 @@
+/* =========================================================
+   Hem Newsletter — Admin Styles
+   ========================================================= */
+
+:root {
+  --hem-primary:   #1a1a1a;
+  --hem-accent:    #2563eb;
+  --hem-success:   #16a34a;
+  --hem-warning:   #d97706;
+  --hem-danger:    #dc2626;
+  --hem-muted:     #6b7280;
+  --hem-surface:   #ffffff;
+  --hem-border:    #e5e7eb;
+  --hem-bg:        #f9fafb;
+  --hem-radius:    6px;
+}
+
+.hem-nl-wrap {
+  max-width: 1100px;
+}
+
+/* ── Header ── */
+.hem-nl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hem-nl-title {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: var(--hem-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 !important;
+}
+
+.hem-nl-title .dashicons {
+  color: var(--hem-accent);
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.hem-nl-tagline {
+  margin: 4px 0 0 !important;
+  color: var(--hem-muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Stats ── */
+.hem-nl-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.hem-nl-stat {
+  background: var(--hem-surface);
+  border: 1px solid var(--hem-border);
+  border-radius: var(--hem-radius);
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.hem-nl-stat-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--hem-accent);
+  line-height: 1;
+}
+
+.hem-nl-stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--hem-muted);
+  margin-top: 4px;
+}
+
+/* ── Tabs ── */
+.hem-nl-tabs {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--hem-border);
+  display: flex;
+  gap: 0;
+}
+
+.hem-nl-tabs a {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: var(--hem-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color .15s, border-color .15s;
+}
+
+.hem-nl-tabs a:hover,
+.hem-nl-tabs a.active {
+  color: var(--hem-accent);
+  border-bottom-color: var(--hem-accent);
+}
+
+/* ── Table ── */
+.hem-nl-table {
+  border-radius: var(--hem-radius);
+  overflow: hidden;
+  border: 1px solid var(--hem-border) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.hem-nl-table thead th {
+  background: var(--hem-bg) !important;
+  color: var(--hem-primary) !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--hem-border) !important;
+}
+
+.hem-nl-table tbody td {
+  padding: 12px 16px !important;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--hem-border);
+  font-size: 14px;
+}
+
+.hem-nl-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hem-nl-table tbody tr:hover td {
+  background: #f0f4ff;
+}
+
+/* ── Badge ── */
+.hem-nl-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.hem-nl-badge--confirmed {
+  background: #dcfce7;
+  color: var(--hem-success);
+}
+
+.hem-nl-badge--pending {
+  background: #fef3c7;
+  color: var(--hem-warning);
+}
+
+/* ── Delete button ── */
+.hem-nl-btn-delete {
+  color: var(--hem-danger) !important;
+  border-color: var(--hem-danger) !important;
+}
+.hem-nl-btn-delete:hover {
+  background: var(--hem-danger) !important;
+  color: #fff !important;
+}
+
+/* ── Empty state ── */
+.hem-nl-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--hem-surface);
+  border: 1px solid var(--hem-border);
+  border-radius: var(--hem-radius);
+  color: var(--hem-muted);
+}
+
+.hem-nl-empty .dashicons {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #d1d5db;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.hem-nl-empty code {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background: var(--hem-bg);
+  border: 1px solid var(--hem-border);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--hem-accent);
+}
+
+/* ── Shortcode hint ── */
+.hem-nl-shortcode-hint {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--hem-radius);
+  font-size: 13px;
+  color: #1e40af;
+}
+
+.hem-nl-shortcode-hint code {
+  background: #dbeafe;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+/* ── Settings cards ── */
+.hem-nl-settings-form .hem-nl-card {
+  background: var(--hem-surface);
+  border: 1px solid var(--hem-border);
+  border-radius: var(--hem-radius);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.hem-nl-card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--hem-primary);
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hem-border);
+}
+
+.hem-nl-card--donate {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border-color: #c7d2fe;
+}
+
+.hem-nl-card--donate h2 {
+  border-color: #c7d2fe;
+}
+
+/* ── Meta box ── */
+.hem-nl-meta-box label {
+  font-size: 13px;
+}
+
+.hem-nl-sent-notice {
+  color: var(--hem-success);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ── Responsive ── */
+@media ( max-width: 782px ) {
+  .hem-nl-header { flex-direction: column; align-items: flex-start; }
+  .hem-nl-stats { width: 100%; }
+  .hem-nl-stat { flex: 1; }
+}
+
+.hem-nl-donation-note {
+  margin: 6px 0 0;
+  color: #555;
+  font-size: 13px;
+}
+
+.hem-nl-donation-note a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+.hem-nl-free-note {
+  margin: 8px 0 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1d2327;
+}
+
+.hem-nl-free-note strong {
+  color: #0a7f42;
+}
+
+.hem-nl-magic-card {
+  border-left: 4px solid #2271b1;
+}
+.hem-nl-detected {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f0f6fc;
+  border: 1px solid #c5d9ed;
+  border-radius: 6px;
+}
+.hem-nl-detected code {
+  font-weight: 600;
+}
+
+.hem-nl-copy-shortcode {
+  margin-left: 8px !important;
+  vertical-align: middle !important;
+}
+
+
+/* Frontend style live preview */
+.hem-nl-style-preview {
+  margin-top: 18px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  max-width: 560px;
+}
+.hem-nl-style-preview h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+.hem-nl-preview-form {
+  max-width: 520px;
+}
+.hem-nl-preview-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+.hem-nl-preview-row input {
+  flex: 1;
+  min-width: 0;
+  height: var(--hem-preview-form-height, 44px);
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--hem-preview-input-radius, 6px);
+  background: #fff;
+  color: #1a1a1a;
+}
+.hem-nl-preview-row button {
+  height: var(--hem-preview-button-height, var(--hem-preview-form-height, 44px));
+  width: var(--hem-preview-button-width, auto);
+  padding: 0 20px;
+  border: none;
+  border-radius: var(--hem-preview-button-radius, 6px);
+  background: var(--hem-preview-button-color, #1a1a1a);
+  color: var(--hem-preview-button-text-color, #fff);
+  cursor: default;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hem-nl-preview-row button:hover {
+  background: var(--hem-preview-button-hover-color, #2563eb);
+}
+.hem-nl-preview-button-inside .hem-nl-preview-row {
+  gap: 0;
+}
+.hem-nl-preview-button-inside input {
+  padding-right: calc(var(--hem-preview-button-width, 120px) + 14px);
+}
+.hem-nl-preview-button-inside button {
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  width: var(--hem-preview-button-width, 120px);
+  height: min(var(--hem-preview-button-height, 42px), calc(var(--hem-preview-form-height, 44px) - 2px));
+  max-height: calc(var(--hem-preview-form-height, 44px) - 2px);
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transform: translateY(-50%);
+}
+
+.hem-nl-preview-form {
+  width: var(--hem-preview-form-width, 520px);
+  max-width: 100%;
+}
+.hem-nl-preview-title {
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.hem-nl-preview-row input,
+.hem-nl-preview-row button {
+  box-sizing: border-box;
+}
+
+
+.hem-nl-card summary {
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--hem-primary);
+  margin-bottom: 14px;
+}
